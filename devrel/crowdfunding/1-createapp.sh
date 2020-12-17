@@ -37,7 +37,7 @@ echo ${cd}
 
 # Create the App and then update it with the stateless teal escrow
 APPID=$(${gcmd} app create --creator ${ACCOUNT} --approval-prog ./crowd_fund.teal --global-byteslices 3 --global-ints 5 --local-byteslices 0 --local-ints 1 --app-arg "int:"${bd} --app-arg "int:"${ed} --app-arg "int:1000000" --app-arg "addr:"${ACCOUNT} --app-arg "int:"${cd} --clear-prog ./crowd_fund_close.teal | grep Created | awk '{ print $6 }')
-UPDATE=$(${gcmd} app update --app-id=${APPID} --from ${ACCOUNT}  --approval-prog ./crowd_fund.teal   --clear-prog ./crowd_fund_close.teal --app-arg "TLGHZPRMSYM7OKHU3QPNXIA3BA3FFNKHB4ZS54REN3K6R2HOTEO2WLSZUQ" )
+UPDATE=$(${gcmd} app update --app-id=${APPID} --from ${ACCOUNT}  --approval-prog ./crowd_fund.teal   --clear-prog ./crowd_fund_close.teal --app-arg "addr:TLGHZPRMSYM7OKHU3QPNXIA3BA3FFNKHB4ZS54REN3K6R2HOTEO2WLSZUQ" )
 
 #optin the creator account
 ${gcmd} app optin  --app-id 1 --from $ACCOUNT 
