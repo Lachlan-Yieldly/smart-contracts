@@ -14,8 +14,8 @@ WALLET=$1
 # Directory of this bash program
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
-gcmd="goal -d ../test/Primary"
-gcmd2="goal -d ../test/Node"
+gcmd="goal "
+gcmd2="goal "
 
 # Get one account from each node
 ACCOUNT=$(${gcmd} account list|awk '{ print $3 }'|head -n 1)
