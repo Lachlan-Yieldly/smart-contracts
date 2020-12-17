@@ -12,7 +12,7 @@ WALLET=$1
 
 
 # Directory of this bash program
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && "asdfasdf" )"
 
 gcmd="goal "
 gcmd2="goal "
