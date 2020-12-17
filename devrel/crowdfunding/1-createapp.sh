@@ -36,8 +36,8 @@ cd=$(($ed + $ss))
 echo ${cd}
 
 # Create the App and then update it with the stateless teal escrow
-APPID=$(${gcmd} app create --creator ${ACCOUNT} --approval-prog ./smart-contract-5/devrel/crowdfunding/crowd_fund.teal --global-byteslices 3 --global-ints 5 --local-byteslices 0 --local-ints 1 --app-arg "int:"${bd} --app-arg "int:"${ed} --app-arg "int:1000000" --app-arg "addr:"${ACCOUNT} --app-arg "int:"${cd} --clear-prog ./smart-contract-5/devrel/crowdfunding/./smart-contract-5/devrel/crowdfunding/crowd_fund_close.teal | grep Created | awk '{ print $6 }')
-UPDATE=$(${gcmd} app update --app-id=${APPID} --from ${ACCOUNT}  --approval-prog ./smart-contract-5/devrel/crowdfunding/crowd_fund.teal   --clear-prog ./smart-contract-5/devrel/crowdfunding/crowd_fund_close.teal --app-arg "addr:F4HJHVIPILZN3BISEVKXL4NSASZB4LRB25H4WCSEENSPCJ5DYW6CKUVZOA" )
+APPID=$(${gcmd} app create --creator ${ACCOUNT} --approval-prog ./smart-contract-6/devrel/crowdfunding/crowd_fund.teal --global-byteslices 3 --global-ints 5 --local-byteslices 0 --local-ints 1 --app-arg "int:"${bd} --app-arg "int:"${ed} --app-arg "int:1000000" --app-arg "addr:"${ACCOUNT} --app-arg "int:"${cd} --clear-prog ./smart-contract-6/devrel/crowdfunding/./smart-contract-6/devrel/crowdfunding/crowd_fund_close.teal | grep Created | awk '{ print $6 }')
+UPDATE=$(${gcmd} app update --app-id=${APPID} --from ${ACCOUNT}  --approval-prog ./smart-contract-6/devrel/crowdfunding/crowd_fund.teal   --clear-prog ./smart-contract-6/devrel/crowdfunding/crowd_fund_close.teal --app-arg "addr:F4HJHVIPILZN3BISEVKXL4NSASZB4LRB25H4WCSEENSPCJ5DYW6CKUVZOA" )
 
 #optin the creator account
 ${gcmd} app optin  --app-id 1 --from $ACCOUNT 
