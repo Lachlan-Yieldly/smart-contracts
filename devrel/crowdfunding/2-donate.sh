@@ -18,7 +18,7 @@ gcmd="goal"
 
 ACCOUNT="MT2G6WAQTSWVZFFTBUVYDOJ2OMW5KIS4IHAKRXDDCTA62IX56K3TSACJF4"
 
-${gcmd} app optin  --app-id 13299585 --from $ACCOUNT 
+# ${gcmd} app optin  --app-id 13299585 --from $ACCOUNT 
 
 ${gcmd} app call --app-id 13299585 --app-arg "str:donate" --from=$ACCOUNT  --out=unsginedtransaction1.tx
 ${gcmd} clerk send --from=$ACCOUNT --to="MT2G6WAQTSWVZFFTBUVYDOJ2OMW5KIS4IHAKRXDDCTA62IX56K3TSACJF4" --amount=500000 --out=unsginedtransaction2.tx
