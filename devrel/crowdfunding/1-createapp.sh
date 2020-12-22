@@ -18,7 +18,7 @@ gcmd="goal"
 gcmd2="goal"
 
 # Get one account from each node
-ACCOUNT="MT2G6WAQTSWVZFFTBUVYDOJ2OMW5KIS4IHAKRXDDCTA62IX56K3TSACJF4"
+ACCOUNT="ZLDJ3Z75ICJR52UGF4T72LZ4CUN6GGSVK6FAWWSHGHTP6T5ANALLAAGIKE"
 
 
 # Get date timestamps to pass in
@@ -40,7 +40,7 @@ APPID=$(${gcmd} app create --creator ${ACCOUNT} --approval-prog ./crowd_fund.tea
 UPDATE=$(${gcmd} app update --app-id=${APPID} --from ${ACCOUNT}  --approval-prog ./crowd_fund.teal   --clear-prog ./crowd_fund_close.teal --app-arg "addr:${ACCOUNT}" )
 
 #optin the creator account
-${gcmd} app optin  --app-id 1 --from $ACCOUNT 
+${gcmd} app optin  --app-id $APPID --from $ACCOUNT 
 
 echo "App ID="$APPID 
 ${gcmd} app read --app-id $APPID --guess-format --global --from $ACCOUNT
