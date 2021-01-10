@@ -1,6 +1,4 @@
 #pragma version 2
-// End Date unixtimestamp
-// Goal
 // Amount - total
 // Escrow Address
 // Creator Address
@@ -15,30 +13,14 @@ app_global_put
 
 
 txn NumAppArgs
-int 5
+int 2
 ==
 bz failed
-byte "StartDate"
-txna ApplicationArgs 0
-btoi
-app_global_put
-byte "EndDate"
-txna ApplicationArgs 1
-btoi
-app_global_put
-byte "Goal"
-txna ApplicationArgs 2
-btoi
-app_global_put
 byte "Receiver"
 txna ApplicationArgs 3
 app_global_put
 byte "Total"
 int 0
-app_global_put
-byte "FundCloseDate"
-txna ApplicationArgs 4
-btoi
 app_global_put
 int 1
 return
@@ -55,12 +37,6 @@ byte "Creator"
 app_global_get
 txn Sender
 ==
-
-global LatestTimestamp
-byte "FundCloseDate"
-app_global_get
->=
-&&
 bz failed
 
 int 0
